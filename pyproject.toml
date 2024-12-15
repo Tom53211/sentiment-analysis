@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "sentiment-analysis"
+version = "0.1.0"
+description = "This project is a Sentiment Analysis application that allows users to train a machine learning model to classify text data into sentiments (positive, neutral, negative) and deploy a Flask-based API for real-time sentiment inference."
+authors = ["tom-halevy"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+scikit-learn = "1.6.0"
+pandas = "2.2.3"
+xgboost = "1.7.5"
+flask = "^3.1.0"
+pytest = "^8.3.4"
+pyaml = "^24.12.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

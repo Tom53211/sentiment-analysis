@@ -1,0 +1,11 @@
+test_load_data:
+  case_1:
+    file_path: "data/raw/Books_10k.jsonl"
+    expected_min_row_count: 1
+  case_2:
+    file_path: "data/raw/empty.jsonl"
+    expected_min_row_count: 0
+  case_3:
+    file_path: "data/raw/non_existent.jsonl"
+    expected_min_row_count: 0
+    expect_exception: true

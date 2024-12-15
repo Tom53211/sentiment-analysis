@@ -1,0 +1,49 @@
+test_split_data:
+  case_1:
+    description: "Standard split with test_size=0.4"
+    df:
+      - clean_text: "I loved this book!"
+        sentiment: "positive"
+      - clean_text: "It was okay, not the best."
+        sentiment: "neutral"
+      - clean_text: "I did not enjoy this book."
+        sentiment: "negative"
+      - clean_text: "Fantastic read, highly recommend."
+        sentiment: "positive"
+      - clean_text: "Not my cup of tea."
+        sentiment: "negative"
+    test_size: 0.4
+    random_state: 42
+    expected:
+      train_size: 3
+      test_size: 2
+
+test_create_vectors:
+  case_1:
+    description: "Standard vectorization with default max_features=5000"
+    X_train:
+      - "I loved this book!"
+      - "This book was fantastic."
+      - "An excellent read, highly recommend."
+    X_test:
+      - "Not my favorite book."
+      - "It was an okay read."
+    max_features: 5000
+    expected:
+      train_shape: [3, 10] 
+      test_shape: [2, 10] 
+
+test_encode_labels:
+  case_1:
+    description: "Standard encoding with multiple labels"
+    y_train:
+      - "positive"
+      - "neutral"
+      - "negative"
+    y_test:
+      - "negative"
+      - "positive"
+    expected:
+      le_classes: ["negative", "neutral", "positive"]
+      y_train_enc: [2, 1, 0]
+      y_test_enc: [0, 2]

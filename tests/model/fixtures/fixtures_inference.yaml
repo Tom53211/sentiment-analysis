@@ -1,0 +1,10 @@
+test_sentiment_inference:
+  case_1:
+    description: "Predict positive sentiment"
+    input_text: "I absolutely loved this book!"
+    expected_output: "positive"
+
+  case_2:
+    description: "Predict negative sentiment"
+    input_text: "This was the worst movie I've ever seen."
+    expected_output: "negative"

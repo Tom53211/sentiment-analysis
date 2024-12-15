@@ -1,0 +1,33 @@
+test_clean_text:
+  case_1:
+    input: "Hello<br>World!"
+    expected: "hello world!"
+  case_2:
+    input: "Good Morning<br/>Everyone<br />!"
+    expected: "good morning everyone !"
+
+test_label_sentiment:
+  case_1:
+    rating: 5.0
+    expected: "positive"
+  case_2:
+    rating: 4.5
+    expected: "positive"
+  case_4:
+    rating: 3.0
+    expected: "neutral"
+  case_5:
+    rating: 2.9
+    expected: "negative"
+  case_6:
+    rating: 0.0
+    expected: "negative"
+  case_9:
+    rating: "4.5"
+    expect_exception: true
+  case_10:
+    rating: None
+    expect_exception: true
+  case_11:
+    rating: []
+    expect_exception: true
